@@ -5,7 +5,9 @@ defmodule BanditChunkDemoWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", BanditChunkDemoWeb do
+  scope "/", BanditChunkDemoWeb do
     pipe_through :api
+
+    get "/", ChunkController, :show
   end
 end
